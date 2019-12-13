@@ -17,14 +17,14 @@ package com.example.android.sunshine;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.app.ShareCompat;
-import android.support.v4.content.CursorLoader;
-import android.support.v4.content.Loader;
-import android.support.v7.app.AppCompatActivity;
+import androidx.loader.app.LoaderManager;
+import androidx.core.app.ShareCompat;
+import androidx.loader.content.CursorLoader;
+import androidx.loader.content.Loader;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -97,12 +97,17 @@ public class DetailActivity extends AppCompatActivity implements
      */
     private ActivityDetailBinding mDetailBinding;
 
+    public DetailActivity() {
+
+
+
+       mDetailBinding = DataBindingUtil.setContentView( this,R.layout.activity_detail);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-        mDetailBinding = DataBindingUtil.setContentView(this, R.layout.activity_detail);
 
         mUri = getIntent().getData();
         if (mUri == null) throw new NullPointerException("URI for DetailActivity cannot be null");

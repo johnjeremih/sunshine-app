@@ -17,7 +17,7 @@ package com.example.android.sunshine.data;
 
 import android.content.UriMatcher;
 import android.net.Uri;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import org.junit.Before;
 import org.junit.Test;
